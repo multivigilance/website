@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MultiVigilance | Cost-Efficient Drug Safety & Pharmacovigilance Services</title>
+<meta name="description" content="MultiVigilance provides cost-efficient pharmacovigilance and drug safety services and trained PV personnel to pharmaceutical companies: ICSR case processing, aggregate reports, signal management, literature surveillance and staffing.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M32 4 8 14v16c0 15 10 26 24 30 14-4 24-15 24-30V14z' fill='%237a1f2b'/><path d='M28 20h8v8h8v8h-8v8h-8v-8h-8v-8h8z' fill='white'/></svg>">
+<style>
+  :root{
+    --maroon:#7a1f2b; --red:#a8323e; --rose:#fbeeee; --rose2:#f5dcdc;
+    --ink:#1f1f24; --muted:#5b5b66; --line:#ead3d3; --white:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:var(--white)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.25rem;color:var(--maroon)}
+  .brand svg{width:34px;height:34px}
+  .brand small{display:block;font-size:.72rem;font-weight:500;color:var(--muted);letter-spacing:.04em}
+  nav ul{display:flex;gap:26px;list-style:none;font-size:.95rem}
+  nav a:hover{color:var(--red)}
+  .btn{display:inline-block;background:var(--maroon);color:#fff;padding:12px 22px;border-radius:6px;font-weight:600;transition:background .2s}
+  .btn:hover{background:var(--red)}
+  .btn.ghost{background:transparent;border:2px solid var(--maroon);color:var(--maroon)}
+  .btn.ghost:hover{background:var(--maroon);color:#fff}
+  .nav .btn{padding:9px 18px;font-size:.9rem}
+
+  .hero{background:linear-gradient(135deg,var(--rose) 0%,#fff 60%);padding:90px 0 80px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+  .tag{display:inline-block;background:var(--rose2);color:var(--maroon);font-weight:600;font-size:.82rem;padding:6px 12px;border-radius:20px;margin-bottom:18px;letter-spacing:.03em}
+  h1{font-size:2.7rem;line-height:1.18;color:var(--ink);margin-bottom:18px}
+  h1 span{color:var(--maroon)}
+  .lead{font-size:1.12rem;color:var(--muted);margin-bottom:30px;max-width:580px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;box-shadow:0 10px 30px rgba(122,31,43,.08)}
+  .hero-card h3{color:var(--maroon);margin-bottom:14px;font-size:1.05rem}
+  .hero-card ul{list-style:none}
+  .hero-card li{padding:9px 0;border-bottom:1px dashed var(--line);display:flex;gap:10px;font-size:.95rem}
+  .hero-card li:last-child{border:none}
+  .tick{color:var(--red);font-weight:700}
+
+  section{padding:80px 0}
+  .head{text-align:center;max-width:720px;margin:0 auto 46px}
+  .head h2{font-size:2rem;margin-bottom:10px}
+  .head p{color:var(--muted)}
+  .eyebrow{color:var(--red);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:26px;background:#fff;transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(122,31,43,.1)}
+  .icon{width:46px;height:46px;border-radius:10px;background:var(--rose);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--maroon);font-weight:800;font-size:1.1rem}
+  .card h3{font-size:1.1rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.94rem}
+
+  .alt{background:var(--rose)}
+  .why{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .why .card{text-align:center}
+  .why .big{font-size:1.6rem;font-weight:800;color:var(--maroon);margin-bottom:6px}
+
+  .models{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .model{border:1px solid var(--line);border-top:5px solid var(--maroon);border-radius:10px;padding:28px;background:#fff}
+  .model h3{margin-bottom:8px}
+  .model p{color:var(--muted);font-size:.94rem;margin-bottom:14px}
+  .model ul{list-style:none;font-size:.92rem}
+  .model li{padding:5px 0}
+
+  .compliance{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .chip{border:1px solid var(--line);background:#fff;padding:10px 18px;border-radius:30px;font-weight:600;font-size:.9rem;color:var(--maroon)}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+  .step{position:relative;padding:26px 22px;background:#fff;border:1px solid var(--line);border-radius:10px}
+  .step::before{counter-increment:s;content:counter(s);position:absolute;top:-16px;left:22px;width:34px;height:34px;border-radius:50%;background:var(--maroon);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+  .step h3{font-size:1rem;margin:8px 0 6px}
+  .step p{font-size:.9rem;color:var(--muted)}
+
+  .contact{background:var(--maroon);color:#fff;border-radius:14px;padding:50px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .contact h2{font-size:1.9rem;margin-bottom:12px}
+  .contact p{opacity:.9}
+  .contact .info div{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.2);display:flex;gap:12px}
+  .contact .info div:last-child{border:none}
+  .contact .info b{min-width:90px}
+  .contact a{text-decoration:underline}
+  .form{background:#fff;border-radius:10px;padding:24px;display:grid;gap:12px}
+  .form input,.form select,.form textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:6px;font:inherit;font-size:.95rem;color:var(--ink);background:#fff}
+  .form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--red);border-color:transparent}
+  .form .btn{border:none;cursor:pointer;font:inherit;font-weight:600;background:var(--maroon);color:#fff}
+  .form .btn:hover{background:var(--red)}
+  .contact .btn:hover{background:var(--rose2)}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media (max-width:900px){
+    nav ul{display:none}
+    .hero-grid,.contact{grid-template-columns:1fr}
+    .grid3,.models{grid-template-columns:1fr 1fr}
+    .why,.steps{grid-template-columns:1fr 1fr}
+    h1{font-size:2.1rem}
+  }
+  @media (max-width:600px){
+    .grid3,.models,.why,.steps{grid-template-columns:1fr}
+    .contact{padding:32px 24px}
+    section{padding:60px 0}
+    .steps{row-gap:30px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 8 14v16c0 15 10 26 24 30 14-4 24-15 24-30V14z" fill="#7a1f2b"/><path d="M28 20h8v8h8v8h-8v8h-8v-8h-8v-8h8z" fill="#fff"/></svg>
+      <span>MultiVigilance<small>DRUG SAFETY SERVICES</small></span>
+    </a>
+    <nav><ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#staffing">PV Staffing</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#process">How We Work</a></li>
+    </ul></nav>
+    <a href="#contact" class="btn">Get a Quote</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">PHARMACOVIGILANCE OUTSOURCING &amp; STAFFING</span>
+      <h1>Reliable drug safety services at the <span>lowest cost</span> to your company</h1>
+      <p class="lead">MultiVigilance supports pharmaceutical, biotech and generic companies with end-to-end pharmacovigilance operations and trained drug safety personnel, delivered from India with strict quality and regulatory compliance.</p>
+      <div class="cta">
+        <a href="#contact" class="btn">Request a Free Quote</a>
+        <a href="#services" class="btn ghost">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>What we take off your plate</h3>
+      <ul>
+        <li><span class="tick">&#10003;</span>ICSR case processing, end to end</li>
+        <li><span class="tick">&#10003;</span>PSUR / PBRER, DSUR and PADER writing</li>
+        <li><span class="tick">&#10003;</span>Signal detection and management</li>
+        <li><span class="tick">&#10003;</span>Global and local literature surveillance</li>
+        <li><span class="tick">&#10003;</span>Dedicated PV staff on flexible contracts</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Our Services</div>
+      <h2>Complete pharmacovigilance support</h2>
+      <p>Pick a single activity or outsource your whole safety function. We serve multiple client companies, so you get a mature, ready team without the overhead.</p>
+    </div>
+    <div class="grid3">
+      <div class="card"><div class="icon">01</div><h3>ICSR Case Processing</h3><p>Case intake, triage, duplicate check, data entry, MedDRA and WHO-DD coding, narrative writing, quality review and E2B (R3) submission within regulatory timelines.</p></div>
+      <div class="card"><div class="icon">02</div><h3>Aggregate Safety Reports</h3><p>Authoring and compilation of PSUR / PBRER, DSUR, PADER and Addendum to Clinical Overview, with data outputs and line listings.</p></div>
+      <div class="card"><div class="icon">03</div><h3>Signal Management</h3><p>Periodic signal detection, validation, evaluation and documentation from safety databases, literature and regulatory sources.</p></div>
+      <div class="card"><div class="icon">04</div><h3>Literature Surveillance</h3><p>Weekly global and local literature screening, article review, case identification and audit-ready search records.</p></div>
+      <div class="card"><div class="icon">05</div><h3>Risk Management</h3><p>Risk Management Plans, additional risk minimisation measures and tracking of safety commitments.</p></div>
+      <div class="card"><div class="icon">06</div><h3>PV System &amp; Compliance</h3><p>PSMF preparation, SOP writing, QPPV / LPPV support, audit and inspection readiness, and compliance metrics.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="staffing" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">PV Personnel</div>
+      <h2>Trained drug safety staff, when you need them</h2>
+      <p>Scale your safety team up or down without hiring costs. Our personnel are trained on major safety databases and global regulations.</p>
+    </div>
+    <div class="models">
+      <div class="model">
+        <h3>Dedicated FTE</h3>
+        <p>Full-time professionals working only on your products, as an extension of your team.</p>
+        <ul><li>&#10003; Drug Safety Associates</li><li>&#10003; Medical Reviewers</li><li>&#10003; Aggregate Report Writers</li></ul>
+      </div>
+      <div class="model">
+        <h3>Project Based</h3>
+        <p>Fixed-scope work such as backlog clearance, PSUR cycles, literature set-up or database migration.</p>
+        <ul><li>&#10003; Clear deliverables</li><li>&#10003; Fixed timelines</li><li>&#10003; Predictable cost</li></ul>
+      </div>
+      <div class="model">
+        <h3>Full Outsourcing</h3>
+        <p>We run your complete pharmacovigilance operations under agreed SLAs and quality metrics.</p>
+        <ul><li>&#10003; Single point of contact</li><li>&#10003; Monthly compliance reports</li><li>&#10003; Audit support included</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Why MultiVigilance</div>
+      <h2>Quality you can trust, at a cost that makes sense</h2>
+    </div>
+    <div class="why">
+      <div class="card"><div class="big">Low Cost</div><p>India-based delivery keeps your safety spend among the lowest in the industry.</p></div>
+      <div class="card"><div class="big">Multi-Client</div><p>Experience across many companies and product types means faster ramp-up.</p></div>
+      <div class="card"><div class="big">Compliant</div><p>Processes aligned to ICH, EU GVP, US FDA and CDSCO / PvPI requirements.</p></div>
+      <div class="card"><div class="big">Flexible</div><p>Start small, scale anytime. No long lock-in for pilot engagements.</p></div>
+    </div>
+    <div style="margin-top:46px" class="compliance">
+      <span class="chip">ICH E2A–E2F</span><span class="chip">EU GVP Modules</span><span class="chip">US FDA 21 CFR</span><span class="chip">CDSCO / PvPI</span><span class="chip">MedDRA &amp; WHO-DD</span><span class="chip">E2B (R3)</span>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">How We Work</div>
+      <h2>Simple onboarding in four steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Requirement Call</h3><p>We understand your products, volumes and current process.</p></div>
+      <div class="step"><h3>Proposal &amp; Quote</h3><p>You receive a clear scope and transparent, low-cost pricing.</p></div>
+      <div class="step"><h3>Transition</h3><p>SOP alignment, access set-up and team training on your products.</p></div>
+      <div class="step"><h3>Delivery &amp; Review</h3><p>Ongoing work with regular quality and compliance reporting.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2>Let us cut your drug safety costs</h2>
+        <p>Tell us what you need, whether it is a single activity, extra staff or a full PV function. We will share a proposal and quote within two working days.</p>
+        <div class="info" style="margin-top:22px">
+          <div><b>Email</b><a href="mailto:inquiry@multivigilance.co.in?subject=Pharmacovigilance%20service%20enquiry">inquiry@multivigilance.co.in</a></div>
+          <div><b>Website</b><span>www.multivigilance.co.in</span></div>
+        </div>
+      </div>
+      <form class="form" action="https://formsubmit.co/inquiry@multivigilance.co.in" method="POST">
+        <input type="hidden" name="_subject" value="New enquiry from multivigilance.co.in">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="text" name="_honey" style="display:none">
+        <input type="text" name="Name" placeholder="Your name" required>
+        <input type="text" name="Company" placeholder="Company name">
+        <input type="email" name="email" placeholder="Work email" required>
+        <input type="tel" name="Phone" placeholder="Phone (optional)">
+        <select name="Service">
+          <option>ICSR case processing</option>
+          <option>Aggregate reports (PSUR / PBRER / DSUR)</option>
+          <option>Signal management</option>
+          <option>Literature surveillance</option>
+          <option>PV staffing / personnel</option>
+          <option>Full PV outsourcing</option>
+          <option>Other</option>
+        </select>
+        <textarea name="Message" rows="4" placeholder="Tell us briefly what you need" required></textarea>
+        <button class="btn" type="submit">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 MultiVigilance Drug Safety Services. All rights reserved.</span>
+    <span>Pharmacovigilance | Drug Safety | PV Staffing</span>
+  </div>
+</footer>
+
+</body>
+</html>
