@@ -5,124 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MultiVigilance | Cost-Efficient Drug Safety & Pharmacovigilance Services</title>
 <meta name="description" content="MultiVigilance provides cost-efficient pharmacovigilance and drug safety services and trained PV personnel to pharmaceutical companies: ICSR case processing, aggregate reports, signal management, literature surveillance and staffing.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M32 4 8 14v16c0 15 10 26 24 30 14-4 24-15 24-30V14z' fill='%237a1f2b'/><path d='M28 20h8v8h8v8h-8v8h-8v-8h-8v-8h8z' fill='white'/></svg>">
-<style>
-  :root{
-    --maroon:#7a1f2b; --red:#a8323e; --rose:#fbeeee; --rose2:#f5dcdc;
-    --ink:#1f1f24; --muted:#5b5b66; --line:#ead3d3; --white:#fff;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:var(--white)}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
-
-  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.25rem;color:var(--maroon)}
-  .brand svg{width:34px;height:34px}
-  .brand small{display:block;font-size:.72rem;font-weight:500;color:var(--muted);letter-spacing:.04em}
-  nav ul{display:flex;gap:26px;list-style:none;font-size:.95rem}
-  nav a:hover{color:var(--red)}
-  .btn{display:inline-block;background:var(--maroon);color:#fff;padding:12px 22px;border-radius:6px;font-weight:600;transition:background .2s}
-  .btn:hover{background:var(--red)}
-  .btn.ghost{background:transparent;border:2px solid var(--maroon);color:var(--maroon)}
-  .btn.ghost:hover{background:var(--maroon);color:#fff}
-  .nav .btn{padding:9px 18px;font-size:.9rem}
-
-  .hero{background:linear-gradient(135deg,var(--rose) 0%,#fff 60%);padding:90px 0 80px;border-bottom:1px solid var(--line)}
-  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
-  .tag{display:inline-block;background:var(--rose2);color:var(--maroon);font-weight:600;font-size:.82rem;padding:6px 12px;border-radius:20px;margin-bottom:18px;letter-spacing:.03em}
-  h1{font-size:2.7rem;line-height:1.18;color:var(--ink);margin-bottom:18px}
-  h1 span{color:var(--maroon)}
-  .lead{font-size:1.12rem;color:var(--muted);margin-bottom:30px;max-width:580px}
-  .cta{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;box-shadow:0 10px 30px rgba(122,31,43,.08)}
-  .hero-card h3{color:var(--maroon);margin-bottom:14px;font-size:1.05rem}
-  .hero-card ul{list-style:none}
-  .hero-card li{padding:9px 0;border-bottom:1px dashed var(--line);display:flex;gap:10px;font-size:.95rem}
-  .hero-card li:last-child{border:none}
-  .tick{color:var(--red);font-weight:700}
-
-  section{padding:80px 0}
-  .head{text-align:center;max-width:720px;margin:0 auto 46px}
-  .head h2{font-size:2rem;margin-bottom:10px}
-  .head p{color:var(--muted)}
-  .eyebrow{color:var(--red);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
-
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .card{border:1px solid var(--line);border-radius:10px;padding:26px;background:#fff;transition:transform .2s,box-shadow .2s}
-  .card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(122,31,43,.1)}
-  .icon{width:46px;height:46px;border-radius:10px;background:var(--rose);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--maroon);font-weight:800;font-size:1.1rem}
-  .card h3{font-size:1.1rem;margin-bottom:8px}
-  .card p{color:var(--muted);font-size:.94rem}
-
-  .alt{background:var(--rose)}
-  .why{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-  .why .card{text-align:center}
-  .why .big{font-size:1.6rem;font-weight:800;color:var(--maroon);margin-bottom:6px}
-
-  .models{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .model{border:1px solid var(--line);border-top:5px solid var(--maroon);border-radius:10px;padding:28px;background:#fff}
-  .model h3{margin-bottom:8px}
-  .model p{color:var(--muted);font-size:.94rem;margin-bottom:14px}
-  .model ul{list-style:none;font-size:.92rem}
-  .model li{padding:5px 0}
-
-  .compliance{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-  .chip{border:1px solid var(--line);background:#fff;padding:10px 18px;border-radius:30px;font-weight:600;font-size:.9rem;color:var(--maroon)}
-
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
-  .step{position:relative;padding:26px 22px;background:#fff;border:1px solid var(--line);border-radius:10px}
-  .step::before{counter-increment:s;content:counter(s);position:absolute;top:-16px;left:22px;width:34px;height:34px;border-radius:50%;background:var(--maroon);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
-  .step h3{font-size:1rem;margin:8px 0 6px}
-  .step p{font-size:.9rem;color:var(--muted)}
-
-  .contact{background:var(--maroon);color:#fff;border-radius:14px;padding:50px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-  .contact h2{font-size:1.9rem;margin-bottom:12px}
-  .contact p{opacity:.9}
-  .contact .info div{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.2);display:flex;gap:12px}
-  .contact .info div:last-child{border:none}
-  .contact .info b{min-width:90px}
-  .contact a{text-decoration:underline}
-  .form{background:#fff;border-radius:10px;padding:24px;display:grid;gap:12px}
-  .form input,.form select,.form textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:6px;font:inherit;font-size:.95rem;color:var(--ink);background:#fff}
-  .form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--red);border-color:transparent}
-  .form .btn{border:none;cursor:pointer;font:inherit;font-weight:600;background:var(--maroon);color:#fff}
-  .form .btn:hover{background:var(--red)}
-  .contact .btn:hover{background:var(--rose2)}
-
-  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-
-  @media (max-width:900px){
-    nav ul{display:none}
-    .hero-grid,.contact{grid-template-columns:1fr}
-    .grid3,.models{grid-template-columns:1fr 1fr}
-    .why,.steps{grid-template-columns:1fr 1fr}
-    h1{font-size:2.1rem}
-  }
-  @media (max-width:600px){
-    .grid3,.models,.why,.steps{grid-template-columns:1fr}
-    .contact{padding:32px 24px}
-    section{padding:60px 0}
-    .steps{row-gap:30px}
-  }
-</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 110'><rect x='2' y='40' width='54' height='26' fill='%235e3aaf'/><rect x='44' y='22' width='16' height='26' fill='%235e3aaf'/><rect x='52' y='40' width='54' height='26' fill='%23e23b36'/><rect x='42' y='48' width='26' height='60' fill='%23e23b36'/><circle cx='54' cy='18' r='15' fill='white' stroke='%23e23b36' stroke-width='4'/><circle cx='54' cy='18' r='10' fill='%235e3aaf'/></svg>">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a href="#" class="brand">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 8 14v16c0 15 10 26 24 30 14-4 24-15 24-30V14z" fill="#7a1f2b"/><path d="M28 20h8v8h8v8h-8v8h-8v-8h-8v-8h8z" fill="#fff"/></svg>
-      <span>MultiVigilance<small>DRUG SAFETY SERVICES</small></span>
-    </a>
+    <a href="./" class="brand"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" role="img" aria-label="MultiVigilance - Providing Opportunities">
+  <rect x="2" y="62" width="58" height="26" fill="#5e3aaf"/>
+  <rect x="44" y="40" width="16" height="30" fill="#5e3aaf"/>
+  <path d="M30 150 C 8 105, 28 62, 96 56" fill="none" stroke="#fff" stroke-width="9"/>
+  <rect x="52" y="62" width="50" height="26" fill="#e23b36"/>
+  <rect x="44" y="70" width="24" height="64" fill="#e23b36"/>
+  <path d="M30 152 C 8 105, 28 62, 96 56" fill="none" stroke="#e23b36" stroke-width="4"/>
+  <circle cx="56" cy="24" r="19" fill="#fff" stroke="#e23b36" stroke-width="4"/>
+  <circle cx="56" cy="24" r="13" fill="#5e3aaf"/>
+  <path d="M72 14 C 110 -8, 175 0, 165 40 C 158 72, 128 72, 98 54" fill="none" stroke="#e23b36" stroke-width="3"/>
+  <text x="118" y="66" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-weight="800" font-size="34" fill="#111" textLength="278" lengthAdjust="spacingAndGlyphs">MULTIVIGILANCE</text>
+  <line x1="118" y1="96" x2="257" y2="96" stroke="#e23b36" stroke-width="4"/>
+  <line x1="257" y1="96" x2="396" y2="96" stroke="#5e3aaf" stroke-width="4"/>
+  <text x="132" y="134" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="19" fill="#e23b36" textLength="252" lengthAdjust="spacingAndGlyphs">PROVIDING OPPORTUNITIES</text>
+</svg></a>
     <nav><ul>
       <li><a href="#services">Services</a></li>
       <li><a href="#staffing">PV Staffing</a></li>
       <li><a href="#why">Why Us</a></li>
       <li><a href="#process">How We Work</a></li>
+      <li><a href="careers.html">Careers</a></li>
     </ul></nav>
     <a href="#contact" class="btn">Get a Quote</a>
   </div>
@@ -269,7 +179,7 @@
 <footer>
   <div class="wrap">
     <span>&copy; 2026 MultiVigilance Drug Safety Services. All rights reserved.</span>
-    <span>Pharmacovigilance | Drug Safety | PV Staffing</span>
+    <span><a href="careers.html">Careers</a> | Pharmacovigilance | Drug Safety | PV Staffing</span>
   </div>
 </footer>
 
